@@ -1,0 +1,15 @@
+.container{
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+input{
+    width: 240px;
+    height: 30px;
+    padding: 15px;
+    margin-left:10px;
+    border-radius: 10px;
+}

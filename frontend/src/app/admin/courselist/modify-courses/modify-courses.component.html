@@ -1,0 +1,111 @@
+<div class="container">
+    <h1 mat-dialog-title class="header">Modifying the Course</h1>
+    <form (ngSubmit)="saveModifications()" [formGroup]="modificationForm">
+      <label>Course Name:</label>
+        <div>
+            <mat-form-field>
+                <input 
+                type="text"
+                matInput
+                placeholder="course name"
+                formControlName="name"
+                >
+            </mat-form-field>
+        </div>
+       <label>Author Name:</label>
+        <div>
+         <mat-form-field>
+            <input 
+            type="text"
+            matInput
+            formControlName="author"
+            placeholder="author"
+            >
+         </mat-form-field>
+       </div>
+       <label>Image :</label>
+       <div>
+         <mat-form-field>
+            <input 
+            type="text"
+            matInput
+            formControlName="image"
+            placeholder="image"
+            >
+         </mat-form-field>
+       </div>
+       <label>Description :</label>
+       <div>
+         <mat-form-field>
+            <input 
+            type="text"
+            matInput
+            formControlName="description"
+            placeholder="description"
+            >
+         </mat-form-field>
+       </div>
+       <label>duration :</label>
+       <div>
+         <mat-form-field>
+            <input 
+            type="text"
+            matInput
+            formControlName="duration"
+            placeholder="duration"
+            >
+         </mat-form-field>
+       </div>
+       <!-- second formGroup -->
+       <div formArrayName="lessons" >
+        <ng-container *ngFor="let lesson of selectedCourse.lessons;let i =index">
+          <label>Section {{i+1}} :</label>
+          <div [formGroupName]="i">
+            <div>
+              <mat-form-field>
+                 <input 
+                 type="text"
+                 matInput
+                 formControlName="section"
+                 placeholder="section"
+                 >
+              </mat-form-field>
+            </div>
+            <div formArrayName="parts" *ngFor="let part of getParts(lesson.parts); let i=index">
+              <div [formGroupName]="i">
+                <label>Title :</label>
+                <div>
+                  <mat-form-field>
+                     <input 
+                     type="text"
+                     matInput
+                     formControlName="title"
+                     placeholder="title"
+                     >
+                  </mat-form-field>
+                </div>
+              <label>Source:</label>
+                <div>
+                  <mat-form-field>
+                     <input 
+                     type="text"
+                     matInput
+                     formControlName="source"
+                     placeholder="source"
+                     >
+                  </mat-form-field>
+                </div>
+              </div>
+           
+            </div>
+          </div>
+      
+        </ng-container>     
+       </div>
+       
+       <div class="button">
+        <button mat-flat-button  color="primary">Save </button>
+    </div>  
+    </form>
+</div>
+

@@ -1,0 +1,11 @@
+[
+    {"id":1,"name":"John Heikela","gender":"male","email":"Heikela@yahoo.com", "courses" :["JavaScript for beginners"]},
+    {"id":2,"name":"Mark Vought","gender":"male","email":"Vought@gmail.com", "courses" :["Angular for beginners"]},
+    {"id":3,"name":"Sara Smith","gender":"female","email":"SaraSmith@hotmail.com", "courses" :["Advance Angular Course"]},
+    {"id":4,"name":"Merry Smith","gender":"female","email":"MerrySmith@gmail.com" ,"courses" :["Advance React Course"]},
+    {"id":5,"name":"John Smith","gender":"male","email":"JohnSmith@hotmail.com" , "courses" :["UX Design Course beginners"]},
+    {"id":6,"name":"Jim Steven","gender":"male","email":"JimSteven@yahoo.com" , "courses" :["UX Design Course Advance"]},
+    {"id":7,"name":"Jonas Carry","gender":"male","email":"JonasCarry@gmail.com" , "courses" :["React course for beginners"]},
+    {"id":8,"name":"Hanna Kehl","gender":"female","email":"HannaKehl@gmail.com" , "courses" :["Angular with .NET Core"]},
+    {"id":9,"name":"Helen Jadi","gender":"female","email":"jadi@gmail.com" , "courses" :["JavaScript Course"]}
+]

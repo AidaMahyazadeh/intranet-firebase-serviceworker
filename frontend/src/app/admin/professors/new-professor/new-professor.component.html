@@ -1,0 +1,73 @@
+<div class="outer">
+      <h1 mat-dialog-title class="header">New Professor</h1>
+      <mat-dialog-content>
+          <form (ngSubmit)="addProfessor()" [formGroup]="professorForm">
+            <label> Professor Name :</label>
+              <div >
+                  <mat-form-field>
+                     <button mat-icon-button matPrefix ><mat-icon>person</mat-icon></button> 
+                      <input 
+                       type="text"
+                       formControlName="name"
+                       matInput
+                       >
+                       <mat-error
+                       *ngIf="professorForm.controls['name'].dirty && professorForm.hasError('required','name')"
+                       >*Fullname is required.
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+              <label >E-mail :</label>
+              <div >
+                <mat-form-field>
+                   <button mat-icon-button matPrefix ><mat-icon>email</mat-icon></button> 
+                    <input 
+                     type="email"
+                     formControlName="email"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="professorForm.controls['email'].dirty && professorForm.hasError('required','email')"
+                     >*Email is required.
+                    </mat-error>
+                    <mat-error
+                    *ngIf="professorForm.controls['email'].dirty&& professorForm.hasError('email','email')||professorForm.hasError('pattern','email')"
+                    >*Email should have a correct format.
+                </mat-error>
+                </mat-form-field>
+            </div>
+            <label>Course :</label>
+            <div >
+                <mat-form-field>
+                    <input 
+                     type="text"
+                     formControlName="courses"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="professorForm.controls['courses'].dirty && professorForm.hasError('required','courses')"
+                     >*This field is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <label>Gender :</label>
+            <div >
+                <mat-form-field>
+                    <input 
+                     type="text"
+                     formControlName="gender"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="professorForm.controls['gender'].dirty && professorForm.hasError('required','gender')"
+                     >*This field is required.
+                    </mat-error>
+                </mat-form-field>
+            </div> 
+            <div class="button">
+                <button mat-flat-button  color="primary">Save </button>
+            </div>    
+          </form> 
+      </mat-dialog-content>
+  </div>
+  

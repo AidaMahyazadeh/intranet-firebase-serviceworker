@@ -1,0 +1,24 @@
+[
+    {"firstname" : "aida",
+     "lastname"  : "mahya",
+     "email" : "mahya@yahoo.com",
+      "password" : "Aida1362!",
+      "username" :"aida",
+      "enrolledCourse": []
+},
+{"firstname" : "ali",
+"lastname"  : "amiri",
+"email" : "amiri@yahoo.com",
+ "password" : "Alireza84!",
+ "username" :"alireza",
+ "enrolledCourse": []
+},
+{"firstname" : "afsaneh",
+"lastname"  : "zabihi",
+"email" : "zabihi@yahoo.com",
+ "password" : "Afsaneh19!",
+ "username" :"afsaneh",
+ "enrolledCourse": []
+}
+
+]

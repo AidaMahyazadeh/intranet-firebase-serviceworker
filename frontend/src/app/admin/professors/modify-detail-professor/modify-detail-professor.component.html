@@ -1,0 +1,74 @@
+<div class="outer">
+    <h1 mat-dialog-title class="header">Modify Information</h1>
+    <mat-dialog-content>
+        <form [formGroup]="modificationForm" (ngSubmit)="saveModifications()">
+          <label> Professor Name :</label>
+            <div >
+                <mat-form-field>
+                   <button mat-icon-button matPrefix ><mat-icon>person</mat-icon></button> 
+                    <input 
+                     type="text"
+                     formControlName="name"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="modificationForm.controls['name'].dirty && modificationForm.hasError('required','name')"
+                     >*Fullname is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <label >E-mail :</label>
+            <div >
+              <mat-form-field>
+                 <button mat-icon-button matPrefix ><mat-icon>email</mat-icon></button> 
+                  <input 
+                   type="email"
+                   formControlName="email"
+                   matInput
+                   >
+                   <mat-error
+                   *ngIf="modificationForm.controls['email'].dirty && modificationForm.hasError('required','email')"
+                   >*Email is required.
+                  </mat-error>
+                  <mat-error
+                  *ngIf="modificationForm.controls['email'].dirty&& modificationForm.hasError('email','email')||modificationForm.hasError('pattern','email')"
+                  >*Email should have a correct format.
+              </mat-error>
+              </mat-form-field>
+          </div>
+          <label>Course :</label>
+          <div >
+              <mat-form-field>
+                  <input 
+                   type="text"
+                   formControlName="courses"
+                   matInput
+                   >
+                   <mat-error
+                   *ngIf="modificationForm.controls['courses'].dirty && modificationForm.hasError('required','courses')"
+                   >*This field is required.
+                  </mat-error>
+              </mat-form-field>
+          </div>
+          <label>Gender :</label>
+          <div >
+              <mat-form-field>
+                  <input 
+                   type="text"
+                   formControlName="gender"
+                   matInput
+                   >
+                   <mat-error
+                   *ngIf="modificationForm.controls['gender'].dirty && modificationForm.hasError('required','gender')"
+                   >*This field is required.
+                  </mat-error>
+              </mat-form-field>
+          </div> 
+          <div class="button">
+              <button mat-flat-button  color="primary">Save Changes</button>
+          </div>    
+        </form> 
+    </mat-dialog-content>
+</div>
+
+

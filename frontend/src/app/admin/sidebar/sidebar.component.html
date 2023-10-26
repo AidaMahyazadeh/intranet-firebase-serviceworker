@@ -1,0 +1,27 @@
+<div class="container">
+ <mat-sidenav-container  >
+    <mat-sidenav mode="side" opened> 
+        <mat-nav-list role="navigation">
+            <mat-list-item>
+                <li (click)="goToUserList()">
+                    <mat-icon>person</mat-icon>Users-List
+                </li>
+            </mat-list-item>
+            <mat-list-item>
+                <li (click)=" goToCourseList()">
+                    <mat-icon>list
+                    </mat-icon>Course-List
+                </li>
+            </mat-list-item>
+              <mat-list-item >
+                <li (click)="goToProfessorList()">
+                    <mat-icon>person</mat-icon>Professors
+                </li>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

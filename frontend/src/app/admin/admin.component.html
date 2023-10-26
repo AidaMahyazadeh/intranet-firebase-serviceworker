@@ -1,0 +1,7 @@
+<app-sidebar></app-sidebar>
+<div *ngIf="!getRoute() ;else navigate" >
+  <h1>welcome to admin page!</h1>
+</div>
+<ng-template #navigate >
+  <router-outlet ></router-outlet>
+</ng-template>

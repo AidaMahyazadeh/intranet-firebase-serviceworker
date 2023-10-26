@@ -1,0 +1,61 @@
+<div class="outer">
+  <mat-card>
+    <h1 class="header">Login</h1>
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="username">
+                <mat-form-field>
+                   <button mat-icon-button matPrefix ><mat-icon>person</mat-icon></button> 
+                    <input 
+                     type="text"
+                     placeholder="username"
+                     formControlName="username"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"
+                     >*Username is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <!-- <div class="email">
+                <mat-form-field>
+                   <button mat-icon-button matPrefix ><mat-icon>email</mat-icon></button> 
+                    <input 
+                     type="email"
+                     placeholder="email"
+                     formControlName="email"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')"
+                     >*Email is required.
+                    </mat-error>
+                </mat-form-field>
+            </div> -->
+            <div class="password">
+                <mat-form-field>
+                    <input 
+                    placeholder="password"
+                    [type]="type"
+                    formControlName="password" 
+                    matInput
+                    >
+                    <button class="mat-icon-size" mat-icon-button matSuffix (click)="hideShowPassword()"
+                    >
+                       <mat-icon>{{eyeIcon}}</mat-icon>
+                    </button>
+                    <mat-error
+                    *ngIf="loginForm.controls['password'].dirty&& loginForm.hasError('required','password')"
+                    >*password is required.
+                </mat-error>
+                </mat-form-field>
+            </div>  
+            <button class="login">Login</button> 
+            <div class="mute">Don't have account?
+                <a class="signup" (click)="onSignup()">Sign Up</a>
+            </div>
+        </form>  
+    </mat-card-content>
+  </mat-card>
+</div>

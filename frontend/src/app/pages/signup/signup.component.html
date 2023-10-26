@@ -1,0 +1,104 @@
+<div class="outer">
+    <mat-card>
+      <h1 class="header">Signup</h1>
+      <mat-card-content>
+          <form (ngSubmit)="onSignup()" [formGroup]="signupForm">
+              <div >
+                  <mat-form-field>
+                     <button mat-icon-button matPrefix ><mat-icon>person</mat-icon></button> 
+                      <input 
+                       type="text"
+                       placeholder="firstname"
+                       formControlName="firstname"
+                       matInput
+                       >
+                       <mat-error
+                       *ngIf="signupForm.controls['firstname'].dirty && signupForm.hasError('required','firstname')"
+                       >*Firstname is required.
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+              <div >
+                <mat-form-field>
+                   <button mat-icon-button matPrefix ><mat-icon>person</mat-icon></button> 
+                    <input 
+                     type="text"
+                     placeholder="lastname"
+                     formControlName="lastname"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="signupForm.controls['lastname'].dirty && signupForm.hasError('required','lastname')"
+                     >*Lastname is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div >
+                <mat-form-field>
+                   <button mat-icon-button matPrefix ><mat-icon>person</mat-icon></button> 
+                    <input 
+                     type="text"
+                     placeholder="username"
+                     formControlName="username"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="signupForm.controls['username'].dirty && signupForm.hasError('required','username')"
+                     >*Username is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div >
+                <mat-form-field>
+                   <button mat-icon-button matPrefix ><mat-icon>email</mat-icon></button> 
+                    <input 
+                     type="email"
+                     placeholder="email"
+                     formControlName="email"
+                     matInput
+                     >
+                     <mat-error
+                     *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')"
+                     >*Email is required.
+                    </mat-error>
+                    <mat-error
+                    *ngIf="signupForm.controls['email'].dirty&& signupForm.hasError('email','email')||signupForm.hasError('pattern','email')"
+                    >*Email should have a correct format.
+                </mat-error>
+                </mat-form-field>
+            </div>
+              <div >
+                  <mat-form-field>
+                      <input 
+                      placeholder="password"
+                      [type]="type"
+                      formControlName="password" 
+                      matInput
+                      >
+                      <button class="mat-icon-size" mat-icon-button matSuffix (click)="hideShowPassword()"
+                      >
+                         <mat-icon>{{eyeIcon}}</mat-icon>
+                      </button>
+                      <mat-error
+                      *ngIf="signupForm.controls['password'].dirty&& signupForm.hasError('required','password')"
+                      >*password is required.
+                  </mat-error>
+                  <mat-error
+                  *ngIf="signupForm.controls['password'].dirty &&signupForm.hasError('pattern','password')"
+                  >*Password should have 8-10 characters,uppercase,lowercase letter,number&special character.
+                  </mat-error>
+                  </mat-form-field>
+              </div>  
+              <button 
+              type="submit"
+              class="signup"
+              >Signup</button>
+              <div class="mute" >
+                  Already have account?
+                  <a class="login" (click)="onLogin()">Login</a>
+              </div>
+          </form>  
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

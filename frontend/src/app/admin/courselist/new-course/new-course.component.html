@@ -1,0 +1,121 @@
+<div class="container">
+    <h1 mat-dialog-title class="header">New Course</h1>
+    <mat-dialog-content>
+        <form (ngSubmit)="addCourse()" [formGroup]="courseForm">
+        <label> Course Name :</label>
+        <div >
+            <mat-form-field>
+                <input 
+                type="text"
+                formControlName="name" 
+                matInput
+                >
+                <mat-error
+                *ngIf="courseForm.controls['name'].dirty && courseForm.hasError('required','name')"
+                >*Course name is required.
+               </mat-error>
+            </mat-form-field>
+        </div>
+        <label> Author :</label>
+        <div >
+            <mat-form-field>
+                <input 
+                type="text"
+                formControlName="author" 
+                matInput
+                >
+                <mat-error
+                *ngIf="courseForm.controls['author'].dirty && courseForm.hasError('required','author')"
+                >*Author name is required.
+               </mat-error>
+            </mat-form-field>
+        </div>
+        <label>Duration :</label>
+        <div >
+            <mat-form-field>
+                <input 
+                type="text"
+                formControlName="duration" 
+                matInput
+                >
+                <mat-error
+                *ngIf="courseForm.controls['duration'].dirty && courseForm.hasError('required','duration')"
+                >*Duration is required.
+               </mat-error>
+            </mat-form-field>
+        </div>
+        <label>Image :</label>
+        <div >
+            <mat-form-field>
+                <input 
+                type="text"
+                formControlName="image" 
+                matInput
+                >
+                <mat-error
+                *ngIf="courseForm.controls['image'].dirty && courseForm.hasError('required','image')"
+                >*Image is required.
+               </mat-error>
+            </mat-form-field>
+        </div>
+        <label>Description :</label>
+        <div >
+            <mat-form-field>
+                <textarea  
+                cols="30" 
+                rows="10" 
+                formControlName="description"
+                matInput
+                ></textarea>
+                <mat-error
+                *ngIf="courseForm.controls['description'].dirty && courseForm.hasError('required','description')"
+                >*Description is required.
+               </mat-error>
+            </mat-form-field>
+        </div>
+       <ng-container formArrayName="lessons">
+       <ng-container  
+       *ngFor="let lesson of lessons.controls; let i=index">
+       <div [formGroupName]="i">
+         <label>Section {{i+1}}</label>
+         <mat-form-field>
+            <input
+             type="text"
+             matInput
+             formControlName="section"
+              >
+         </mat-form-field>
+         <ng-container formArrayName="parts" *ngFor="let part of getParts(i); let subIndex=index" >
+            <div [formGroupName]="subIndex">
+            <div >
+                <label>Title :</label>
+                <mat-form-field>
+                   <input
+                    type="text"
+                    matInput
+                    formControlName="title"
+                     >
+                </mat-form-field>
+            </div>
+            <div>
+                <label>Source :</label>
+                <mat-form-field>
+                   <input
+                    type="text"
+                    matInput
+                    formControlName="source"
+                     >
+                </mat-form-field>
+            </div>
+        </div>
+         </ng-container>
+       </div>
+       </ng-container>
+    </ng-container>
+       <button class="btn-add" mat-flat-button (click)="addLessons()">+Add lessons</button>
+        <div class="button">
+            <button mat-flat-button  color="primary">Save </button>
+        </div>  
+        </form>
+    </mat-dialog-content>
+</div>

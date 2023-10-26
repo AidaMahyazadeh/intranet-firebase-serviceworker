@@ -1,0 +1,38 @@
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+.header{
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}
+
+label{
+    font-weight: bold;
+}
+
+mat-form-field{
+    width: 80%;
+    margin-left: 60px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.outer{
+    width: 400px;
+    
+}
+
+label{
+    margin-left: 60px;
+}
+
+.btn-add{
+    background-color: rgb(156, 232, 156);
+}
+

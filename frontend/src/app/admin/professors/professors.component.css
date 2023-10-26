@@ -1,0 +1,73 @@
+.heading-text{
+    font-weight: bold;
+    color: blueviolet;
+    letter-spacing: 1px;
+    margin-left: 800px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+
+ .container{
+    margin-left: 300px;
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+mat-card{
+        height: 60%;
+        width: 40%;
+        border-radius: 10px;
+        margin: 40px;   
+}
+
+.professorImage{ 
+    
+    margin: auto;
+    align-content: center;
+    border-radius: 50%;
+}
+
+img{
+   
+    width: 100px;
+    height: 120;
+}
+
+.text{
+    font-weight: bold; margin-bottom: 10px;
+}
+
+.title{
+    color: darkblue;
+}
+
+.detail{
+    color: red;
+}
+
+.btn-success{
+    width: 100px;
+    height: 60px;
+    margin-left: 300px;
+    background-color: rgb(94, 208, 94);
+    color: beige;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-danger{
+    border-radius: 5px;
+    align-items: center;
+   
+}
+
+.btn-warning{
+    border-radius: 5px;
+    color: beige;
+    background-color: rgb(230, 235, 3);
+    justify-content: flex-end;
+}

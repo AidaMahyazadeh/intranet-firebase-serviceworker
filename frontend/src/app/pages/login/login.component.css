@@ -1,0 +1,51 @@
+mat-card{
+    text-align: center;
+    max-width: 400px;
+    max-height: 400px; 
+    border-radius: 10px;
+}
+
+.outer{
+    height: 100vh;
+    background: linear-gradient(to top, #c9c9ff, #6e6ef6);
+    display: flex; 
+  align-items: center; 
+  justify-content: center;
+ }
+
+.header{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: #4343ff;
+    font-weight: bolder;
+}
+
+
+.login{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: #4343ff;
+    border: none;
+    color: beige;
+    font-size: large;
+}
+
+.mute{
+    color: grey;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.signup{
+    cursor: pointer;
+}
+
+
+mat-icon{
+   color: #4343ff;
+    font-size: medium;
+}
+  

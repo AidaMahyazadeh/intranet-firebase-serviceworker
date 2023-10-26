@@ -1,0 +1,33 @@
+.container{
+    height: 100%;
+    width: 500px;
+}
+
+.header{
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}
+
+label{
+    font-weight: bold;
+}
+
+mat-form-field{
+    width: 80%;
+    margin-left: 60px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.outer{
+    width: 800px;
+    
+}
+
+label{
+    margin-left: 60px;
+}

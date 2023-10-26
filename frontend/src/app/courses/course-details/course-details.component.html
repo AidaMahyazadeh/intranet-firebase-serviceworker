@@ -1,0 +1,92 @@
+<button mat-raised-button class="btn btn-back"
+(click)="backToAllCourses()"
+>Back</button>
+<div class="container" [ngClass]="{'containerAfterEnroll':isShownContent}">
+    <ng-container >
+        <mat-card >
+            <img mat-card-image [src]="selectedCourse.image" alt="">
+            <mat-card-title>
+                {{selectedCourse.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{selectedCourse.author}}
+            </mat-card-subtitle>
+            <mat-card-content>
+                {{selectedCourse.description}}  
+            </mat-card-content>
+            <mat-card-actions>
+                <button *ngIf="!enrolledIn" mat-raised-button (click)="openDialog(selectedCourse)"class="btn-enroll" >Enroll</button>
+                <button  *ngIf="enrolledIn" (click)="showContent()"
+                class="btn-enrollin" >
+                  <mat-icon  >play_arrow</mat-icon>
+                </button> 
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+</div>
+<ng-container *ngIf="isShownContent" class="panelAfterEnroll" >
+  <mat-accordion   *ngFor="let lesson of selectedCourse.lessons; let i =index">
+    <div class="outer-panel" >
+      <mat-expansion-panel class="mat-expansion">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Section {{i+1}}:{{lesson.section |titlecase}}
+          </mat-panel-title>
+          <mat-panel-description>  
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let part of lesson.parts;let i =index">
+          <p>{{part.title |titlecase}}</p>
+          <button class="btn-play-video" [id]="i" (click)="playVideo(i)" >
+            <mat-icon>video_library</mat-icon>
+          </button> 
+          <ng-container *ngIf="part.pdf">
+          <mat-form-field>
+            <mat-label>
+              <mat-icon>picture_as_pdf</mat-icon> Resources
+            </mat-label>
+            <mat-select>
+              <mat-select-trigger>
+              </mat-select-trigger>
+              <mat-option value="option" (click)="showPdf()">Show Pdf</mat-option>
+              <mat-option value="option" (click)="downloadPdf()">Download Pdf</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+          <ng-container *ngIf="isShownPdf" >
+             <iframe #sourcePdf [src]="(part.pdf! |safe)" 
+              width="1100px" height="500px"
+              frameborder="0">
+            </iframe>
+              
+              <!-- <pdf-viewer
+              [render-text]="true"
+              [src]="part.pdf!|safe"
+              [(page)]="pageVariable"
+              [show-all]="true"
+               [original-size]="false"
+              [fit-to-page]="true"
+              [autoresize]="true" 
+              [external-link-target]="'blank'"
+              #pdfViewer
+              >
+              </pdf-viewer>    -->
+          </ng-container>
+          <ng-container  >
+            <div class="embed-responsive" [hidden]="!isShownVideo">
+              <iframe #youtubePlayer [id]="i" class="embed-responsive-item"
+              [src]="part.source | safe" 
+              frameborder="0"
+              allowfullscreen width="560" height="315" 
+             autoplay
+              ></iframe>
+            </div>
+          </ng-container>  
+        </ng-container>
+      </mat-expansion-panel>
+    </div>
+  </mat-accordion>
+</ng-container>
+
+
+ 

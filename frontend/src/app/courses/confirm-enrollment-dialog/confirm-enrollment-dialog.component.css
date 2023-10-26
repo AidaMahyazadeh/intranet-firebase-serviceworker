@@ -1,0 +1,31 @@
+.container{
+    border-radius: 5px;
+    height: 120px;
+    width: 300px;
+}
+
+mat-icon{
+    display: flex;
+    
+}
+
+span{
+   margin-left: 20px;
+}
+
+.btn-no{
+    background-color: red;
+    color :beige;
+    margin-top: 25px;
+    margin-left: 40px;
+   
+}
+
+.btn-yes{
+    background-color: green;
+    color :beige;
+   margin-left: 90px;
+   margin-top: 25px;
+
+   
+}

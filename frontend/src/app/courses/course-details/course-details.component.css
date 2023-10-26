@@ -1,0 +1,108 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+mat-card{
+     margin: 50px auto;
+     width: 400px;
+     display: inline-block;
+     vertical-align: middle;  
+     border: 1px solid black;
+}
+
+
+img{
+    width: 400px;
+    height: 250px;
+}
+
+.btn-back{
+    background-color: rgba(18, 99, 198, 0.826);
+    margin-top: 40px;
+    margin-left: 30px;
+    color: beige;
+}
+
+.btn-enroll{
+    border: none;
+    border-radius: 5px;
+    color: beige;
+    margin-left: 150px;
+    background-color: green;
+}
+
+.btn-enrollin{
+ margin-left: 160px;
+ border: none;
+}
+
+mat-icon{
+    background-color: red;
+    color: beige;
+    border-radius: 60%;
+    size: 20px;
+}
+
+mat-card-title,
+mat-card-subtitle
+{
+  text-align: center;
+}
+
+mat-card-action{
+    border: none;
+}
+
+mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+  }
+
+.btn-play-video,
+.btn-pdf
+{
+    border: none;
+}  
+
+mat-accordian{
+    display: flex;
+}
+
+ .mat-expansion{
+    width: 50%;
+    height: auto; 
+    top:50px;
+    margin-left: 700px;
+    border: 1px solid grey;   
+    justify-content: center; 
+} 
+
+::ng-deep .mat-expansion-panel-body {
+    text-align: center;
+    height: auto;
+  }
+
+  .embed-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+.containerAfterEnroll{
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
