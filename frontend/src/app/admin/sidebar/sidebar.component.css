@@ -4,11 +4,11 @@
     height: 100%;
     top:0;
     left: 0;
-    width: 150px;
+    width: 50px;
 }
 
 mat-sidenav-container{
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
     border: none;
     position: fixed;
@@ -39,6 +39,7 @@ mat-sidenav-container{
     margin-left: 0;
     margin-right: 9px;
     cursor: pointer;
+    vertical-align : middle;  
   }
 
   mat-sidenav-content{

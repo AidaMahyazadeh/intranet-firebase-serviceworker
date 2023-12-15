@@ -1,14 +1,29 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.service';
 
+const animatedSidebar= trigger('animatedSidebar',[
+  state('collapsed',style({
+    width :'50px'
+  })),
+  state('expanded',style({
+    width: '150px'
+  })),
+  transition('collapsed<=>expanded',animate('500ms ease-in-out'))
+]
+)
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
+  animations:[animatedSidebar]
+ 
 })
 export class SidebarComponent implements OnInit {
+  sidebarState = 'collapsed';
   adminName:string ='';
   constructor(
     private authStorageService : AuthStorageService,
@@ -30,6 +45,14 @@ export class SidebarComponent implements OnInit {
 
   goToProfessorList(){
      this.router.navigate(['professors-list'],{relativeTo :this.activatedRoute})
+  }
+
+  expandSidebar(){
+    this.sidebarState ='expanded'
+  }
+
+  collapseSidebar(){
+    this.sidebarState ='collapsed'
   }
 
 }

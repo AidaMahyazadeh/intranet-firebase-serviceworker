@@ -1,5 +1,6 @@
-<div class="container">
- <mat-sidenav-container  >
+<div class="container" >
+ <mat-sidenav-container (mouseenter)="expandSidebar()" (mouseleave)="collapseSidebar()"
+ [@animatedSidebar]="sidebarState">
     <mat-sidenav mode="side" opened> 
         <mat-nav-list role="navigation">
             <mat-list-item>
