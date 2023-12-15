@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { AdminComponent } from './admin.component';
 import { UserlistComponent } from './userlist/userlist.component';
@@ -23,10 +24,8 @@ import { ModifyDetailProfessorComponent } from './professors/modify-detail-profe
 
 import { ModifyCoursesComponent } from './courselist/modify-courses/modify-courses.component';
 import { NewCourseComponent } from './courselist/new-course/new-course.component';
-
-
-
-
+import { DraggableDirective } from '../shared/directives/draggable.directive';
+import { MovableDirective } from '../shared/directives/movable.directive';
 
 
 @NgModule({
@@ -39,8 +38,9 @@ import { NewCourseComponent } from './courselist/new-course/new-course.component
     NewProfessorComponent,
     ModifyDetailProfessorComponent,
     ModifyCoursesComponent,
-    NewCourseComponent
-   
+    NewCourseComponent,
+    DraggableDirective,
+    MovableDirective
   ],
   imports: [
     CommonModule,
@@ -54,7 +54,8 @@ import { NewCourseComponent } from './courselist/new-course/new-course.component
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class AdminModule { }
