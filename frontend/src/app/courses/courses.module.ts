@@ -17,6 +17,7 @@ import { SearchComponent } from './search/search.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ConfirmEnrollmentDialogComponent } from './confirm-enrollment-dialog/confirm-enrollment-dialog.component';
 import { SafePipe } from './safe.pipe';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -39,7 +40,8 @@ import { SafePipe } from './safe.pipe';
     MatDialogModule,
     MatIconModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonToggleModule
   ]
 })
 export class CoursesModule { }

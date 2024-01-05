@@ -1,0 +1,44 @@
+<div style="padding: 150px;">
+  <h2>Users</h2>
+  <div class="toolbar">
+    <!-- Your existing filter and sorting components -->
+
+    <mat-spinner *ngIf="data.loading$ | async" diameter="32"></mat-spinner>
+  </div>
+
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngIf="data.page$ | async as page">
+      <ng-container *ngIf="page.content">
+        <mat-card *ngFor="let user of page.content">
+          <!-- Your card content for each user -->
+					<mat-card-content>
+            <div class="text">
+                <b class="title">user Name :</b>
+                <b class="detail">{{user.name}}</b>
+              </div>
+              <div class="text">
+                <b class="title">Email :</b>
+                <b class="detail">{{user.email}}</b>
+              </div>
+              <div class="text">
+                <b class="title">Gender :</b>
+                <b class="detail">{{user.gender}}</b>
+              </div>
+              <div class="text">
+                <b class="title">Courses :</b>
+                <b class="detail">{{user.courses}}</b>
+              </div>
+              <div class="buttons">
+                <button class="btn-danger" mat-flat-button color="warn">Delete</button>
+                <button class="btn-warning " mat-flat-button  >Modify</button>
+              </div>   
+        </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-paginator *ngIf="data.page$ | async as page" [length]="page.totalElements" [pageSize]="page.size"
+    [pageIndex]="page.number" [hidePageSize]="true" (page)="data.fetch($event.pageIndex)">
+  </mat-paginator>
+</div>

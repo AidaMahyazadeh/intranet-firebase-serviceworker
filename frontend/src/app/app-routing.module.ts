@@ -5,7 +5,9 @@ import { adminAuthGuard } from './core/services/guards/admin-auth.guard';
 
 const routes: Routes = [
   {path : '', redirectTo :'login',pathMatch:'full'}, 
-  {path :'admin',canActivate :[adminAuthGuard] ,loadChildren:()=>import('./admin/admin.module').then(module=>module.AdminModule)},
+  {path :'admin'
+  // ,canActivate :[adminAuthGuard]
+   ,loadChildren:()=>import('./admin/admin.module').then(module=>module.AdminModule)},
   {
     path :'courses',loadChildren :()=>import('./courses/courses.module').then(module=>module.CoursesModule)
   },

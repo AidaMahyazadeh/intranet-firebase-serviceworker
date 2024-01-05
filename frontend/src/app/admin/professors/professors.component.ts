@@ -25,7 +25,9 @@ export class ProfessorsComponent implements OnInit{
   ngOnInit() {
     this.professorsService.getAllProfessore().subscribe(
       res=>this.professors=res
-    )
+      
+      )
+      
   }
   
   openDialog(){

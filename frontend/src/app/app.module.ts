@@ -14,6 +14,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 // import { provideAuth,getAuth } from '@angular/fire/auth';
 // import { provideDatabase,getDatabase } from '@angular/fire/database';
 // import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -30,6 +31,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ToastrModule.forRoot(),
     CoreModule,
     PagesModule,
+    MatButtonToggleModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

@@ -26,6 +26,13 @@ import { ModifyCoursesComponent } from './courselist/modify-courses/modify-cours
 import { NewCourseComponent } from './courselist/new-course/new-course.component';
 import { DraggableDirective } from '../shared/directives/draggable.directive';
 import { MovableDirective } from '../shared/directives/movable.directive';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ProfessorListComponent } from './professors/professor-list/professor-list.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -40,7 +47,8 @@ import { MovableDirective } from '../shared/directives/movable.directive';
     ModifyCoursesComponent,
     NewCourseComponent,
     DraggableDirective,
-    MovableDirective
+    MovableDirective,
+    ProfessorListComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +63,14 @@ import { MovableDirective } from '../shared/directives/movable.directive';
     MatInputModule,
     MatDialogModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatGridListModule
+    
   ]
 })
 export class AdminModule { }

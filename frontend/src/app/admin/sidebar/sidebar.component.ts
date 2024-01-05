@@ -46,6 +46,9 @@ export class SidebarComponent implements OnInit {
   goToProfessorList(){
      this.router.navigate(['professors-list'],{relativeTo :this.activatedRoute})
   }
+  goToProfessorPagination(){
+    this.router.navigate(['professors-pagination'],{relativeTo :this.activatedRoute})
+ }
 
   expandSidebar(){
     this.sidebarState ='expanded'
