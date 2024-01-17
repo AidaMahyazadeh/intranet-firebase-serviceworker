@@ -1,20 +1,15 @@
-import { Observable } from "rxjs";
+import { CardItem } from "./card-item.model";
 
 export class Pagination {
-   page!:number;
-   size !:number;
-//    length !:number;
+   pageIndex!: number;
+   pageSize !: number;
+   totalCount?:number=0;
 
    constructor(data?: any) {
-    Object.assign(this, data)
-}
+      Object.assign(this, data)
+   }
+
 }
 
-// export interface Page<T>{
-//     content:T[];
-//     size:number;
-//     number:number;
-//     length:number
-// }
 
-// export type paginationEndPoint<T> =(req:Pagination)=>Observable<Page<T>>
+
