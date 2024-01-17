@@ -26,6 +26,7 @@ import { ModifyCoursesComponent } from './courselist/modify-courses/modify-cours
 import { NewCourseComponent } from './courselist/new-course/new-course.component';
 import { DraggableDirective } from '../shared/directives/draggable.directive';
 import { MovableDirective } from '../shared/directives/movable.directive';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { MovableDirective } from '../shared/directives/movable.directive';
     MatInputModule,
     MatDialogModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    SharedModule 
   ]
 })
 export class AdminModule { }

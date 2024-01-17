@@ -1,7 +1,7 @@
 import ICourse from "./course.model";
 
 export interface IProfessor{
-    id ?:number;
+    id :number;
     name: string;
     email:string;
     gender:string;

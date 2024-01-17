@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import ICourse from '../../models/course.model';
+import { Pagination } from 'src/app/shared/components/card-list/models/pagination.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class CoursesListService {
  
   constructor(private http :HttpClient){}
     
-  getAllCourses():Observable<ICourse[]>{
+  getAllCourses$(pageFilter:Pagination):Observable<ICourse[]>{
     return this.http.get<ICourse[]>(this.coursesUrl)
   }
+
 }

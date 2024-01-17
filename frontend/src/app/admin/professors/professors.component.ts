@@ -4,6 +4,8 @@ import { IProfessor } from 'src/app/core/models/professor.model';
 import { ProfessorService } from 'src/app/core/services/admin/professor.service';
 import { NewProfessorComponent } from './new-professor/new-professor.component';
 import { ModifyDetailProfessorComponent } from './modify-detail-professor/modify-detail-professor.component';
+import { PageEvent } from '@angular/material/paginator';
+import { Pagination } from 'src/app/shared/components/card-list/models/pagination.model';
 
 
 @Component({
@@ -15,6 +17,10 @@ export class ProfessorsComponent implements OnInit{
   professors !:IProfessor[];
   newaddedprofessor !:IProfessor;
   selectedProfessor !:IProfessor;
+  length !:number;
+  pageSize!:number;
+  currentPage!:number;
+  pageSizeOptions =[4,8,12]
   
   
   constructor(
@@ -23,9 +29,9 @@ export class ProfessorsComponent implements OnInit{
     ){}
   
   ngOnInit() {
-    this.professorsService.getAllProfessore().subscribe(
-      res=>this.professors=res
-    )
+    // this.professorsService.getAllProfessore$().subscribe(
+    //   res=>this.professors=res
+    // )
   }
   
   openDialog(){
@@ -48,9 +54,11 @@ export class ProfessorsComponent implements OnInit{
   dialogRef.componentInstance.selectedProfessor=this.selectedProfessor
   }
   
-  
-  
   onDeleteProfessor(professorName :string){
     this.professors=this.professors.filter(professor=>professor.name!=professorName)
+  }
+
+  handlePageEvent(event:PageEvent){
+
   }
 }

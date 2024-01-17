@@ -1,0 +1,25 @@
+
+.container{
+    margin-left: 300px;
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+mat-card{
+        height: auto;
+        width: auto;
+        border-radius: 10px;
+        margin: 10px;   
+}
+
+.text{
+    font-weight: bold; margin-bottom: 10px;
+}
+
+.title{
+    color: darkblue;
+}
+
+.detail{
+    color: palevioletred;
+}

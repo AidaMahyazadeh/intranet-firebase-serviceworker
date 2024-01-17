@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { IProfessor } from '../../models/professor.model';
+import { Pagination } from 'src/app/shared/components/card-list/models/pagination.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +13,18 @@ export class ProfessorService {
 
   constructor(private http :HttpClient) { }
 
-  getAllProfessore():Observable<IProfessor[]>{
+  getAllProfessore$(pageFilter:Pagination):Observable<IProfessor[]>{
     return this.http.get<IProfessor[]>(this.professorsUrl)
   }
 
-  addNewProfessor(newProfessor :IProfessor ):Observable<IProfessor>{
+  addNewProfessor$(newProfessor :IProfessor ):Observable<IProfessor>{
     return this.http.put<IProfessor>(this.professorsUrl,newProfessor)
   }
- 
-  // getProfessorByUsername(username:string):IProfessor{
-  //  this.getAllProfessore().subscribe(
-  //   res => this.professors=res
-  //  )
-  // return this.professors.find(professor=>professor.username==username)!
-  // }
+
+  paginate(pageFilter:Pagination){
+    const startIndex = pageFilter.pageIndex*pageFilter.pageSize;
+    const endIndex= (pageFilter.pageIndex*pageFilter.pageSize)+pageFilter.pageSize
+   return this.professors?.slice(startIndex,endIndex)
+   }
   
 }
