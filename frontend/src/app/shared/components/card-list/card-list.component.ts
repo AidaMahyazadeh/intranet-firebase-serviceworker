@@ -5,6 +5,8 @@ import { Observable, map } from 'rxjs';
 import { Pagination } from './models/pagination.model';
 import { PageEvent } from '@angular/material/paginator';
 import { CarditemService } from './models/carditem.service';
+import ICourse from 'src/app/core/models/course.model';
+import { IProfessor } from 'src/app/core/models/professor.model';
 
 @Component({
   selector: 'app-card-list',
@@ -18,6 +20,8 @@ export class CardListComponent<T> extends CardListDataSource<CardItem[]> impleme
   totalCartItem :number =0;
   datasource !:  CardItem[]
   cartService =inject(CarditemService)
+  @Input()data !: ICourse[] | IProfessor[]
+ 
 
   constructor() {
     super();

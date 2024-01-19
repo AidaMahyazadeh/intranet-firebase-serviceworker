@@ -21,10 +21,11 @@ export class ProfessorService {
     return this.http.put<IProfessor>(this.professorsUrl,newProfessor)
   }
 
-  paginate(pageFilter:Pagination){
+  paginate(pageFilter:Pagination,professors:IProfessor[]){
     const startIndex = pageFilter.pageIndex*pageFilter.pageSize;
     const endIndex= (pageFilter.pageIndex*pageFilter.pageSize)+pageFilter.pageSize
-   return this.professors?.slice(startIndex,endIndex)
+    this.professors=professors
+   return this.professors.slice(startIndex,endIndex)
    }
   
 }

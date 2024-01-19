@@ -2,9 +2,7 @@
 <button class="btn-success" mat-flat-button (click)="openDialog()">
   Add new Course
 </button>
-<!-- <app-card-list></app-card-list> -->
  <div class="container">  
-
      <mat-card *ngFor="let course of courses" appMovable>
     <div class="courseImage">
       <img [src]="course.image" />
@@ -65,6 +63,5 @@
       </div>
     </mat-card-content>
   </mat-card> 
-    
 </div>
-<app-pagination #paginator [length]="length" [currentPage]="currentPage" [pageSize]="pageSize" (changePage)="handlePageEvent($event)" [paginationOption]="[4,8,12]" ></app-pagination> 
+<app-pagination #paginator [length]="length" [pageIndex]="currentPage" [pageSize]="pageSize" (changePage)="handlePageEvent($event)" [paginationOption]="[4,8,12]" ></app-pagination> 

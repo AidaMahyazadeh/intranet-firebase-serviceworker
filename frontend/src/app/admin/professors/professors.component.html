@@ -1,38 +1,56 @@
 <div class="heading-text">Professor List</div>
-<button  class="btn-success" mat-flat-button (click)="openDialog()" >Add new Professor </button>
+<button class="btn-success" mat-flat-button (click)="openDialog()">
+  Add new Professor
+</button>
 <div class="container">
-<ng-container >
-    <mat-card *ngFor="let professor of professors; let i=index" appMovable >
-        <div class="professorImage">
-            <img *ngIf="professor.gender==='male'" 
-            [src]="'../../assets/images/maleprofessor.png'"
-            >
-            <img *ngIf="professor.gender==='female'" [src]="'../../assets/images/femaleprofessor.png'" >
+  <ng-container>
+    <mat-card *ngFor="let professor of professors; let i = index" appMovable>
+      <div class="professorImage">
+        <img
+          *ngIf="professor.gender === 'male'"
+          [src]="'../../assets/images/maleprofessor.png'"
+        />
+        <img
+          *ngIf="professor.gender === 'female'"
+          [src]="'../../assets/images/femaleprofessor.png'"
+        />
+      </div>
+      <mat-card-content>
+        <div class="text">
+          <b class="title">Professor Name :</b>
+          <b class="detail">{{ professor.name }}</b>
         </div>
-        <app-card-list></app-card-list>
-        <!-- <mat-card-content>
-            <div class="text">
-                <b class="title">Professor Name :</b>
-                <b class="detail">{{professor.name}}</b>
-              </div>
-              <div class="text">
-                <b class="title">Email :</b>
-                <b class="detail">{{professor.email}}</b>
-              </div>
-              <div class="text">
-                <b class="title">Gender :</b>
-                <b class="detail">{{professor.gender}}</b>
-              </div>
-              <div class="text">
-                <b class="title">Courses :</b>
-                <b class="detail">{{professor.courses}}</b>
-              </div>
-              <div class="buttons">
-                <button class="btn-danger" mat-flat-button color="warn"(click)="onDeleteProfessor(professor.name)">Delete</button>
-                <button class="btn-warning " mat-flat-button  (click)="openModify(i+1)">Modify</button>
-              </div>   
-        </mat-card-content> -->
+        <div class="text">
+          <b class="title">Email :</b>
+          <b class="detail">{{ professor.email }}</b>
+        </div>
+        <div class="text">
+          <b class="title">Gender :</b>
+          <b class="detail">{{ professor.gender }}</b>
+        </div>
+        <div class="text">
+          <b class="title">Courses :</b>
+          <b class="detail">{{ professor.courses }}</b>
+        </div>
+        <div class="buttons">
+          <button
+            class="btn-danger"
+            mat-flat-button
+            color="warn"
+            (click)="onDeleteProfessor(professor.name)"
+          >
+            Delete
+          </button>
+          <button
+            class="btn-warning"
+            mat-flat-button
+            (click)="openModify(i + 1)"
+          >
+            Modify
+          </button>
+        </div>
+      </mat-card-content>
     </mat-card>
-  </ng-container> 
+  </ng-container>
 </div>
-
+<app-pagination #paginator [length]="length" [pageIndex]="currentPage" [pageSize]="pageSize" (changePage)="handlePageEvent($event)" [paginationOption]="[4,8,12]" ></app-pagination> 

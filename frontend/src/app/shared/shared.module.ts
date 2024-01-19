@@ -3,13 +3,16 @@ import { CardListComponent } from "./components/card-list/card-list.component";
 import { PaginationComponent } from "./components/pagination/pagination.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatIconModule } from "@angular/material/icon";
+
 import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports:[
       CommonModule,
       MatCardModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      MatIconModule
     ],
     declarations:[
         CardListComponent,

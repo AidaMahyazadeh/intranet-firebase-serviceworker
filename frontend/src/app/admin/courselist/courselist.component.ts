@@ -23,11 +23,11 @@ export class CourselistComponent implements OnInit,AfterViewInit,OnDestroy {
    courses !:ICourse[];
   selectedCourse !:ICourse;
   newAddedCourse !:ICourse;
-  length :number=0;
+  length !:number;
   pageSize :number=4;
-  currentPage:number=0;
+  currentPage:number =1;
   subscription !:Subscription;
-  @ViewChild(PaginationComponent,{static:true}) paginator !:Pagination;
+  @ViewChild(PaginationComponent) paginator !:PaginationComponent;
   datasource!: CourseDatasource;
 
   
@@ -39,18 +39,19 @@ export class CourselistComponent implements OnInit,AfterViewInit,OnDestroy {
   
    ngOnInit() {
     this.datasource = new CourseDatasource(this.courseService)
-    this.datasource.pagination=this.paginator
+    //  this.datasource.pagination=this.paginator
     this.getCourses({pageIndex:this.currentPage,pageSize:this.pageSize})
   }
 
   ngAfterViewInit(): void {
-    this.datasource.pagination=this.paginator
+     this.datasource.pagination=this.paginator
   }
  
   getCourses(pageFilter:Pagination){
-    this.datasource.loadData$(pageFilter).subscribe(
+   this.subscription= this.datasource.loadData$(pageFilter).subscribe(
       res=>{
       this.courses= res
+      this.length=this.courses.length
      return this.courses= this.courseService.paginate(pageFilter,this.courses)
     }
      )
@@ -98,8 +99,7 @@ export class CourselistComponent implements OnInit,AfterViewInit,OnDestroy {
    this.pageSize=event.pageSize;
    this.currentPage=event.pageIndex;
    this.length=event.length
-   this.getCourses({pageIndex:this.currentPage,pageSize:this.pageSize})
-   
+   this.getCourses({pageIndex:this.currentPage,pageSize:this.pageSize}) 
     }
   }
 
