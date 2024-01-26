@@ -9,19 +9,26 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
+<<<<<<< HEAD
 // import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 // import { environment } from '../environments/environment';
 // import { provideAuth,getAuth } from '@angular/fire/auth';
 // import { provideDatabase,getDatabase } from '@angular/fire/database';
 // import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+=======
+import {MatButtonModule} from '@angular/material/button';
+import { SharedModule } from './shared/shared.module';
+import { MatTableDataSource } from '@angular/material/table';
+>>>>>>> 79d05ba907c8d560ab9403872de3b058181c5c46
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -31,17 +38,17 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     ToastrModule.forRoot(),
     CoreModule,
     PagesModule,
+<<<<<<< HEAD
     MatButtonToggleModule,
+=======
+    SharedModule,
+    MatButtonModule,
+>>>>>>> 79d05ba907c8d560ab9403872de3b058181c5c46
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+       registrationStrategy: 'registerWhenStable:30000'
     }),
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
-    // provideDatabase(() => getDatabase()),
-    // provideFirestore(() => getFirestore())
+    // MatTableDataSource
   ],
   providers: [],
   bootstrap: [AppComponent]

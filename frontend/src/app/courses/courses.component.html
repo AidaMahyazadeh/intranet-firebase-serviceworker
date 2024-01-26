@@ -1,20 +1,27 @@
-
-<app-search  (searchedText)=" onSearchedCourse($event)"></app-search>
+<app-search (searchedText)="onSearchedCourse($event)"></app-search>
 <div class="container">
-  <ng-container  *ngFor="let course of courses">  
-    <mat-card *ngIf="!searchedCourse || course.name.toLowerCase().includes(searchedCourse)">
-    <img mat-card-image [src]="course.image" alt={{course.name}}>
-    <mat-card-title>{{course.name}}</mat-card-title>
-      <mat-card-subtitle>{{course.author}}</mat-card-subtitle>
-    <mat-card-content>
-      <p>{{course.description.slice(0,50)}}...</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button class="mat-raised-button" mat-button  [routerLink]="[(course.name.slice(0,10)),course.id]">Details</button>
-    </mat-card-actions>
+  <ng-container *ngFor="let course of courses">
+  <!-- <ng-container *ngFor="let course of dataSource"> -->
+    <mat-card 
+      *ngIf="
+        !searchedCourse || course.name.toLowerCase().includes(searchedCourse)
+      "
+    >
+      <img mat-card-image [src]="course.image" alt="{{ course.name }}" />
+      <mat-card-title>{{ course.name }}</mat-card-title>
+      <mat-card-subtitle>{{ course.author }}</mat-card-subtitle>
+      <mat-card-content>
+        <p>{{ course.description.slice(0, 50) }}...</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          class="mat-raised-button"
+          mat-button
+          [routerLink]="[course.name.slice(0, 10), course.id]"
+        >
+          Details
+        </button>
+      </mat-card-actions>
     </mat-card>
-   </ng-container>
+  </ng-container>
 </div>
-
-
-

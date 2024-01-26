@@ -11,7 +11,7 @@ export abstract class CardListDataSource<T> extends DataSource<CardItem>{
   get cardItem$(){ return this.cardItemSubject.asObservable()}
   set cardItem(value: CardItem[]) { this.cardItemSubject.next(value)}
 
-  private paginationSubject = new BehaviorSubject<Pagination>(new Pagination());
+  private paginationSubject = new BehaviorSubject<Pagination>(new Pagination({pageIndex:1, pageSize:4} as Pagination));
   get pagination$(){ return this.paginationSubject.asObservable()}
   set pagination(value: Pagination) { this.paginationSubject.next(value)}
 
@@ -20,10 +20,7 @@ export abstract class CardListDataSource<T> extends DataSource<CardItem>{
     super()
   }
 
-  override connect(collectionViewer: CollectionViewer): Observable<CardItem[]> {
-    // return this.cardItem$.pipe(
-    
-    // )
+  override connect(): Observable<CardItem[]> {
    return this.init()
   }
 
@@ -38,12 +35,8 @@ export abstract class CardListDataSource<T> extends DataSource<CardItem>{
     )
   }
   
-  setPaginator(pageFilter: Pagination) {
-    this.pagination = pageFilter
-  }
-  
+ 
   public abstract loadData$(pageFilter: Pagination): Observable<CardItem[]>;
 
-  
 }
 

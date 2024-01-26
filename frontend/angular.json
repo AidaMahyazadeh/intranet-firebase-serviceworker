@@ -118,6 +118,12 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "1c6dfd43-a46f-4d18-a5f4-f6cf1ac586f0"
+=======
+    "cache": {
+      "enabled": false
+    }
+>>>>>>> 79d05ba907c8d560ab9403872de3b058181c5c46
   }
 }

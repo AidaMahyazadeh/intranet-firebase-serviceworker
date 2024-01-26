@@ -1,5 +1,7 @@
 <h1><a  (click)="onCourses()">Let's start learning {{userName |uppercase}}</a></h1>
-<ng-container >
-    <!-- <img [src]="screenImage" > -->
-    <app-map></app-map>
+<!-- <h4 [@fadeInOut]="isShowMap ?'show':'hide'">Your location is shown in the map!!</h4>
+ <button mat-raised-button color="primary"(click)="showMap()">Toggle Map</button> -->
+<ng-container >    
+    <app-map ></app-map>
+    
 </ng-container>

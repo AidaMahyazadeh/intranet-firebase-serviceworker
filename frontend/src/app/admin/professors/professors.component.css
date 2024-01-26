@@ -71,3 +71,12 @@ img{
     background-color: rgb(230, 235, 3);
     justify-content: flex-end;
 }
+
+mat-paginator{
+    display: flex;
+    /* justify-content: center; */
+    color: blue;
+    align-items: end;
+    margin-left: auto;
+    margin-right:35%;
+  }

@@ -1,1 +1,18 @@
-<p>card-list works!</p>
+<div class="container">
+  <mat-card *ngFor="let item of datasource">
+    <mat-card-header>
+        <mat-card-content >
+            <div class="text">
+                <b class="title">Id :</b>
+                <b class="detail">{{item.id}}</b>
+              </div>
+              <div class="text">
+                <b class="title"> Name :</b>
+                <b class="detail">{{item.name}}</b>
+              </div>
+        </mat-card-content>
+      </mat-card-header>
+</mat-card> 
+</div>
+
+    

@@ -26,6 +26,7 @@ import { ModifyCoursesComponent } from './courselist/modify-courses/modify-cours
 import { NewCourseComponent } from './courselist/new-course/new-course.component';
 import { DraggableDirective } from '../shared/directives/draggable.directive';
 import { MovableDirective } from '../shared/directives/movable.directive';
+<<<<<<< HEAD
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProfessorListComponent } from './professors/professor-list/professor-list.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -33,6 +34,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
+=======
+import { SharedModule } from '../shared/shared.module';
+>>>>>>> 79d05ba907c8d560ab9403872de3b058181c5c46
 
 
 @NgModule({
@@ -64,6 +68,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
+<<<<<<< HEAD
     MatProgressSpinnerModule,
     MatButtonToggleModule,
     MatSelectModule,
@@ -71,6 +76,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatNativeDateModule,
     MatGridListModule
     
+=======
+    SharedModule 
+>>>>>>> 79d05ba907c8d560ab9403872de3b058181c5c46
   ]
 })
 export class AdminModule { }
